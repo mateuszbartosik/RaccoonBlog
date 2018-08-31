@@ -10,7 +10,7 @@ using Xunit;
 
 namespace RaccoonBlog.IntegrationTests.Web.Services
 {
-	public class PostSchedulingStrategyTests : RavenTestDriver<TestsServerLocator>
+	public class PostSchedulingStrategyTests : RavenTestDriver
 	{
 		protected DateTimeOffset Now { get; private set; }
 		protected IDocumentStore DocumentStore { get; private set; }
