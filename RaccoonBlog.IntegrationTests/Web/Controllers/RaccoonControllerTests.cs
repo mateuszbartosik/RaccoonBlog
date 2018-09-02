@@ -10,7 +10,7 @@ using Rhino.Mocks;
 
 namespace RaccoonBlog.IntegrationTests.Web.Controllers
 {
-	public abstract class RaccoonControllerTests : RavenTestDriver<TestsServerLocator>
+	public abstract class RaccoonControllerTests : RavenTestDriver
 	{
 	    private readonly IDocumentStore _documentStore;
 
