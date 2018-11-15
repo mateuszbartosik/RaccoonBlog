@@ -547,10 +547,12 @@
     <Content Include="Content\css\img\ico_phone.svg" />
     <Content Include="Content\css\img\ico_stack_active.svg" />
     <Content Include="Content\css\img\ico_stack_inactive.svg" />
+    <Content Include="Content\css\img\left-corner.png" />
     <Content Include="Content\css\img\logo-vertical.svg" />
     <Content Include="Content\css\img\logo.svg" />
     <Content Include="Content\css\img\readmore.png" />
     <Content Include="Content\css\img\readmore2.png" />
+    <Content Include="Content\css\img\right-corner.png" />
     <Content Include="Content\css\img\rihno.svg" />
     <Content Include="Content\css\img\rss.png" />
     <Content Include="Content\css\img\search-icon.svg" />
@@ -562,6 +564,8 @@
     <Content Include="Content\fonts\socicon-webfont.svg" />
     <Content Include="Content\css\img\commentDate.png" />
     <Content Include="Content\css\img\commentDateImp.png" />
+    <Content Include="Content\images\ayende%40rahien.png" />
+    <Content Include="Content\images\oren.jpg" />
     <Content Include="Content\js\anytime.js" />
     <Content Include="Content\css\anytime.min.css" />
     <Content Include="Content\js\anytime.min.js" />
@@ -1155,9 +1159,7 @@
     <Content Include="Views\PostDetails\MarkdownHelp.cshtml" />
     <Content Include="Views\MailTemplates\RedditSubmissionFailed.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\PostDetails\Details.cshtml" />
   </ItemGroup>
