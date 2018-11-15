@@ -376,7 +376,6 @@
     <Content Include="Areas\Admin\Content\datepicker\css\bootstrap-datetimepicker.css" />
     <Content Include="Areas\Admin\Content\datepicker\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Areas\Admin\Content\datepicker\js\bootstrap-datetimepicker.min.js" />
-    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Areas\Admin\Content\img\logo.svg" />
     <Content Include="Areas\Admin\Content\js\bootstrap.js" />
     <Content Include="Areas\Admin\Content\js\fullcalendar.js" />
@@ -560,12 +559,10 @@
     <Content Include="Content\css\img\side_bkg.png" />
     <Content Include="Content\css\prism.css" />
     <Content Include="Content\css\socicon.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\fonts\socicon-webfont.svg" />
     <Content Include="Content\css\img\commentDate.png" />
     <Content Include="Content\css\img\commentDateImp.png" />
-    <Content Include="Content\images\ayende%40rahien.png" />
-    <Content Include="Content\images\oren.jpg" />
+    <Content Include="Content\images\**\*" />
+    <Content Include="Content\fonts\**\*" />
     <Content Include="Content\js\anytime.js" />
     <Content Include="Content\css\anytime.min.css" />
     <Content Include="Content\js\anytime.min.js" />
@@ -1019,14 +1016,6 @@
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
     <Content Include="Content\css\bootstrap\bootstrap.custom.less" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\fonts\socicon-webfont.eot" />
-    <Content Include="Content\fonts\socicon-webfont.ttf" />
-    <Content Include="Content\fonts\socicon-webfont.woff" />
-    <Content Include="Content\fonts\socicon-webfont.woff2" />
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff" />
@@ -1049,10 +1038,7 @@
     </Content>
     <Content Include="Areas\Admin\Content\css\admin.variables.less" />
     <Content Include="Areas\Admin\Content\css\admin.styles.less" />
-    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\**\*" />
     <Content Include="Areas\Admin\Content\js\tinymce\langs\readme.md" />
     <Content Include="Areas\Admin\Content\js\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Areas\Admin\Content\js\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
