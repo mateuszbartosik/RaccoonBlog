@@ -160,11 +160,7 @@
     }
 
     function adjustSize() {
-        if ($(window).width() < 992) {
-            $('.rightSide').css('min-height', 0);
-        } else {
-            $('.rightSide').css('min-height', $('.centerCol').height() + 70);
-        }
+       
     }
 
     function showSidebarOnFirstVisit() {
