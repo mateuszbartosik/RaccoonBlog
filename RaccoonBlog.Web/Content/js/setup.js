@@ -29,9 +29,13 @@
 
         $('.comments textarea').keydown(handleTabsInComment);
 
+        if (isNewSession()) {
+            initSession();
+        }
+
         enableCommentsPreview();
         adjustSize();
-        showSidebarOnFirstVisit();
+        showSidebarOnFirstVisits();
         setPreferredView();
         makeTablesResponsive();
     }
@@ -85,7 +89,10 @@
     }
 
     function toggleSidebar() {
-        $('.container').toggleClass('hideSidebar');
+        var showCondition = $(window).width() > $(window).height();
+        if (showCondition) {
+            $('.container').toggleClass('hideSidebar');
+        }
     }
 
     function toggleMenu() {
@@ -163,14 +170,45 @@
        
     }
 
-    function showSidebarOnFirstVisit() {
-        var visitCookieVaule = cookies.read('newVisit');
-        if (visitCookieVaule != 'visited') {
-            var showCondition = $(window).width() > $(window).height();
-            if (showCondition) {
-                toggleSidebar();
-            }
-            cookies.create('newVisit', 'visited');
+    function bumpVisitCount() {
+        const visitCount = getVisitCount();
+        setVisitCount(visitCount + 1);
+    }
+
+    function getVisitCount() {
+        let cookieVal = cookies.read('visitCount');
+        const cannotBeParsed = !cookieVal || isNaN(cookieVal);
+        return cannotBeParsed ? 0 : parseInt(cookieVal);
+    }
+
+    function setVisitCount(value) {
+        cookies.create('visitCount', value);
+    }
+
+    function isNewSession() {
+        const data = sessionStorage.getItem('initializedSession');
+        return !data || data !== 'true';
+    }
+
+    function initSession() {
+        sessionStorage.setItem('initializedSession', 'true');
+        bumpVisitCount();
+    }
+
+    function shouldShowSidebar() {
+        const isOnMainPage = window.location.pathname === '/';
+        if (isOnMainPage) {
+            return true;
+        }
+
+        const visitCountMax = 10;
+        const visitCount = getVisitCount();
+        return visitCount < visitCountMax;
+    }
+
+    function showSidebarOnFirstVisits() {
+        if (shouldShowSidebar()) {
+            toggleSidebar();
         }
     }
 
