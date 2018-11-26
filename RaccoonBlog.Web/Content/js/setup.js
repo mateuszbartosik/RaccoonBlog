@@ -35,14 +35,13 @@
 
         enableCommentsPreview();
         adjustSize();
-        showSidebarOnFirstVisits();
         setPreferredView();
         makeTablesResponsive();
     }
 
     function initEvents() {
         openbtn.click(toggleMenu);
-        enlargebtn.click(toggleSidebar);
+        enlargebtn.click(toggleSidebarOnClick);
         showgrid.click(toggleGrid);
         showstack.click(toggleStack);
         openTags.click(toggleTags);
@@ -93,6 +92,11 @@
         if (showCondition) {
             $('.container').toggleClass('hideSidebar');
         }
+    }
+
+    function toggleSidebarOnClick() {
+        toggleSidebar();
+        setSidebarHiddenInCookies();
     }
 
     function toggleMenu() {
@@ -185,6 +189,15 @@
         cookies.create('visitCount', value);
     }
 
+    function setSidebarHiddenInCookies() {
+        cookies.create('hideSidebar', true);
+    }
+
+    function getSidebarHiddenFromCookies() {
+        let cookieVal = cookies.read('hideSidebar');
+        return cookieVal === 'true';
+    }
+
     function isNewSession() {
         const data = sessionStorage.getItem('initializedSession');
         return !data || data !== 'true';
@@ -193,23 +206,6 @@
     function initSession() {
         sessionStorage.setItem('initializedSession', 'true');
         bumpVisitCount();
-    }
-
-    function shouldShowSidebar() {
-        const isOnMainPage = window.location.pathname === '/';
-        if (isOnMainPage) {
-            return true;
-        }
-
-        const visitCountMax = 10;
-        const visitCount = getVisitCount();
-        return visitCount < visitCountMax;
-    }
-
-    function showSidebarOnFirstVisits() {
-        if (shouldShowSidebar()) {
-            toggleSidebar();
-        }
     }
 
     function setPreferredView() {
