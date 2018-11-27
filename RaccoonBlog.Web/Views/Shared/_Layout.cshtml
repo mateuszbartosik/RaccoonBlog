@@ -25,7 +25,14 @@
     @RenderSection("Style", false)
 </head>
 <body class="show-grid">
-    <div class="container hideSidebar">
+    @{
+        var containerClass = "container";
+        if (SidebarHelper.ShouldShowSidebar() == false)
+        {
+            containerClass += " hideSidebar";
+        }
+    }
+    <div class="@containerClass">
             <div class="leftSide">
                 <a href="@Url.Action("Index", "Posts")" class="logo">
                     <h1>@ViewBag.BlogConfig.Title</h1>

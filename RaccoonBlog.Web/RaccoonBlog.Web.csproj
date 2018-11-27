@@ -280,6 +280,7 @@
     <Compile Include="Extensions\XmlResult.cs" />
     <Compile Include="Helpers\Attributes\CustomHandleErrorAttribute.cs" />
     <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Helpers\CookieJar.cs" />
     <Compile Include="Helpers\CryptographyUtil.cs" />
     <Compile Include="Helpers\FutureRssAccessToken.cs" />
     <Compile Include="Helpers\PostHelper.cs" />
@@ -287,6 +288,7 @@
     <Compile Include="Helpers\Recaptcha2Helper.cs" />
     <Compile Include="Helpers\Recaptcha2Verifier.cs" />
     <Compile Include="Helpers\RedditHelper.cs" />
+    <Compile Include="Helpers\SidebarHelper.cs" />
     <Compile Include="Helpers\SignInHelper.cs" />
     <Compile Include="Helpers\ThemeLessTransform.cs" />
     <Compile Include="Helpers\RouteCollectionExtension.cs" />
