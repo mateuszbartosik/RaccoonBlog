@@ -7,21 +7,23 @@
     @foreach (var post in Model.Posts)
 	{
 		<article class="article-body">
-			<time>
-				<span>@post.PublishedAt.ToString("MMM dd")</span>
-				@post.PublishedAt.ToString("yyyy")
-			</time>
-			<a href="@Url.Action("Details", "PostDetails", new { post.Id, post.Slug })">
-				@if (post.IsSerie == false)
-				{
-					<h2>@post.Title</h2>
-				}
-				else
-				{
-					<h2><span class="seriesTitle">@Html.Raw(TitleConverter.ToSeriesTitle(post.Title))</span>@Html.Raw(TitleConverter.ToPostTitle(post.Title))</h2>
-				}
-			</a>
-			<div class="clearfix"></div>
+            <div class="atricle-header">
+                <time>
+                    <span>@post.PublishedAt.ToString("MMM dd")</span>
+                    @post.PublishedAt.ToString("yyyy")
+                </time>
+                <a href="@Url.Action("Details", "PostDetails", new { post.Id, post.Slug })">
+                    @if (post.IsSerie == false)
+                    {
+                        <h2>@post.Title</h2>
+                    }
+                    else
+                    {
+                        <h2><span class="seriesTitle">@Html.Raw(TitleConverter.ToSeriesTitle(post.Title))</span>@Html.Raw(TitleConverter.ToPostTitle(post.Title))</h2>
+                    }
+                </a>
+            </div>
+			
 			<div class="timetoread">
 				@{
 					var timeToRead = PostHelper.CalculateTimeToRead(post.Body);

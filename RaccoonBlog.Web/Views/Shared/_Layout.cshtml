@@ -26,7 +26,7 @@
 </head>
 <body class="show-grid">
     @{
-        var containerClass = "container";
+        var containerClass = "body-container";
         if (SidebarHelper.ShouldShowSidebar() == false)
         {
             containerClass += " hideSidebar";
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div id="content" class="centerCol flex-grow">
-                <header>
+                <header class="body-header">
                     <div class="search">
                         @using (Html.BeginForm("SearchResult", "Search", FormMethod.Get))
                         {
