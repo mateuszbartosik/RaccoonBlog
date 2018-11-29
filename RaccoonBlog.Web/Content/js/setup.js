@@ -90,7 +90,7 @@
     function toggleSidebar() {
         var showCondition = $(window).width() > $(window).height();
         if (showCondition) {
-            $('.container').toggleClass('hideSidebar');
+            $('.body-container').toggleClass('hideSidebar');
         }
     }
 
