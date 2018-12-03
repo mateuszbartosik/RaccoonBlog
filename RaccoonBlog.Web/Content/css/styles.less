@@ -58,11 +58,11 @@ hr {
     border: none;
     //float:right;
     font-size: 35px;
-    position: absolute;
     z-index: 90;
     top: 30px;
     right: 10px;
     margin-right: 0;
+    margin-left: @grid-gutter-width/2;
 
 
 
@@ -75,7 +75,7 @@ hr {
     }
 
     &:active {
-        color: @brand-primary;
+        color: @brand-success;
     }
 }
 
@@ -110,6 +110,14 @@ hr {
     background-position: left bottom;
     background-repeat: no-repeat;
 
+    header {
+        width: 100%;
+        display: flex;
+        .logo {
+            flex-grow: 1;
+        }
+    }
+
     @media (min-width: @screen-sm) {
         left: 0;
         top: 0;
@@ -135,14 +143,16 @@ hr {
 
 
         @media (max-width: @screen-xs-max) {
-            display: none;
+            //display: none;
         }
 
+        border-radius: 70px;
+        box-shadow: 0 0 0 4px #FFF;
+        width: 70px;
+        height: 70px;
+        margin: 4px auto;
+
         @media (min-width: @screen-sm) {
-            border-radius: 70px;
-            box-shadow: 0 0 0 4px #FFF;
-            width: 70px;
-            height: 70px;
         }
 
         @media (min-width: @screen-lg) {
@@ -186,7 +196,11 @@ hr {
         }
 
         span {
-            line-height: 35px;
+            line-height: 23px;
+
+            @media (min-width: @screen-sm) {
+                line-height: 35px;
+            }
 
             &:nth-of-type(1) {
                 font-size: 30px;
@@ -239,41 +253,40 @@ hr {
             }
         }
 
+        .mail {
+            background: url(../img/ico_mail.svg) left no-repeat;
+        }
+
+        .phone {
+            background: url(../img/ico_phone.svg) left no-repeat;
+        }
+
+        .mail, .phone {
+            @media (min-width: @screen-sm) {
+                margin-top: 5px;
+            }
+
+            @media (min-width: @screen-lg) {
+                margin-top: 10px;
+            }
+        }
+
         p {
             font-size: 21px;
             color: @brand-success;
             margin: 0px;
             padding-left: 55px;
 
-            &.mail {
-                margin-top: 20px;
-                background: url(../img/ico_mail.svg) left no-repeat;
-
-                @media (min-width: @screen-sm) {
-                    font-size: 18px;
-                }
-
-                @media (min-width: @screen-lg) {
-                    font-size: 21px;
-                }
-
-                a {
-                    color: @brand-success;
-                }
+            @media (min-width: @screen-sm) {
+                font-size: 18px;
             }
 
-            &.phone {
-                margin-top: 20px;
-                background: url(../img/ico_phone.svg) left no-repeat;
+            @media (min-width: @screen-lg) {
+                font-size: 21px;
+            }
+
+            a {
                 color: @brand-success;
-
-                @media (min-width: @screen-sm) {
-                    font-size: 18px;
-                }
-
-                @media (min-width: @screen-lg) {
-                    font-size: 21px;
-                }
             }
         }
     }
@@ -987,7 +1000,6 @@ article {
             font-weight: normal;
             line-height: 0.9;
             padding: 10px 10px;
-            margin: 0 0 20px 0;
             flex-shrink: 0;
 
             span {
@@ -1134,7 +1146,21 @@ article {
 
 .atricle-header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    time {
+        margin-bottom: @grid-gutter-width/4;
+    }
+
+    @media (min-width: @screen-sm) {
+        flex-direction: row;
+        align-items: center;
+
+        time {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .show-grid {
