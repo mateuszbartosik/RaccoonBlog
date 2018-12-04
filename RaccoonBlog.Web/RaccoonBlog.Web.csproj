@@ -645,7 +645,6 @@
     <Compile Include="ViewModels\AdminPostDetailsViewModel.cs" />
     <Compile Include="Helpers\CommenterUtil.cs" />
     <Compile Include="ViewModels\CommentInput.cs" />
-    <Compile Include="ViewModels\ContactMeViewModel.cs" />
     <Compile Include="ViewModels\CurrentUserViewModel.cs" />
     <Compile Include="ViewModels\FuturePostViewModel.cs" />
     <Compile Include="ViewModels\NewCommentEmailViewModel.cs" />

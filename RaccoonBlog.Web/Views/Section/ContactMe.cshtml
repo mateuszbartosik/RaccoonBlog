@@ -1,27 +1,16 @@
-﻿@model ContactMeViewModel
-@{
+﻿@{
     Layout = "";
 }
 @{
-    string text = null;
-    if (string.IsNullOrEmpty(Model.Phone) == false && string.IsNullOrEmpty(Model.Email) == false)
-    {
-        text = "You can reach me by:";
-    }
-    else if (string.IsNullOrEmpty(Model.Phone) == false)
-    {
-        text = "You can reach me by phone:";
-    }
-    else if (string.IsNullOrEmpty(Model.Email) == false)
-    {
-        text = "You can reach me by email:";
-    }
+    const string fullName = "Oren Eini";
+    const string email = "oren@ravendb.net";
+    const string phone = "+972 52-548-6969";
 }
 <div class="flex-grow"></div>
 <img src="~/Content/images/oren.jpg" class="oren-photo img-center" />
 <div class="flex-grow"></div>
 <div>
-    <span>@Model.FullName</span> <span>aka Ayende Rahien</span>
+    <span>@fullName</span> <span>aka Ayende Rahien</span>
     <span>
         CEO of <a href="http://www.hibernatingrhinos.com/" class="about-link" target="_blank"><strong> Hibernating Rhinos LTD</strong></a>,
         which develops <a href="http://ravendb.net/" class="about-link" target="_blank"><strong>RavenDB</strong></a>,
@@ -30,18 +19,8 @@
 </div>
 <div class="flex-grow"></div>
 <div class="about-info">
-    @if (string.IsNullOrEmpty(text) == false)
-    {
-        <p class="margin-top">@text</p>
-    }
-    @if (string.IsNullOrEmpty(Model.Email) == false)
-    {
-        <p class="mail"><a href="@string.Format("mailto:{0}", Model.Email)">@Model.Email</a></p>
-    }
-    @if (string.IsNullOrEmpty(Model.Phone) == false)
-    {
-        <p class="phone">@Model.Phone</p>
-    }
-
+    <p class="margin-top">You can reach me by:</p>
+    <p class="mail"><a href="@string.Format("mailto:{0}", email)">@email</a></p>
+    <p class="phone">@phone</p>
     <div class="flex-grow"></div>
 </div>

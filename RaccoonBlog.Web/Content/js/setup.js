@@ -88,10 +88,10 @@
     }
 
     function toggleSidebar() {
-        var showCondition = $(window).width() > $(window).height();
-        if (showCondition) {
+        //var showCondition = $(window).width() > $(window).height();
+        //if (showCondition) {
             $('.body-container').toggleClass('hideSidebar');
-        }
+        //}
     }
 
     function toggleSidebarOnClick() {
