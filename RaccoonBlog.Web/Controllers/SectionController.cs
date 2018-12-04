@@ -90,9 +90,7 @@ namespace RaccoonBlog.Web.Controllers
 		[DonutOutputCache(Duration = 3600)]
 		public virtual ActionResult ContactMe()
         {
-	        var user = RavenSession.GetUserByEmail(BlogConfig.OwnerEmail);
-
-            return View(new ContactMeViewModel(user));
+            return View();
         }
         
 		[ChildActionOnly]
