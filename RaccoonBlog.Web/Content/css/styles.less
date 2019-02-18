@@ -926,10 +926,16 @@ article {
     padding: 30px 0;
 
     &.article-body {
-        
+
         header {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @media (min-width: @screen-sm) {
+                flex-direction: row;
+                align-items: center;
+            }
 
             time {
                 flex-shrink: 0;
@@ -1746,7 +1752,11 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
             overflow-x: hidden;
 
             header {
-                display: flex;
+                position: relative;
+
+                @media (min-width: @screen-sm) {
+                    display: flex;
+                }
             }
 
             &.preview {
@@ -1770,6 +1780,8 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
 
 
                 .avatar {
+
+
                     img {
                         height: 58px;
                         width: 58px;
@@ -1794,17 +1806,23 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
                 border-radius: 40px;
                 border: solid 2px @gray-light;
                 display: inline-block;
-                margin-bottom: -16px;
                 background-color: #FFF;
                 position: relative;
                 z-index: 20;
-                margin: 5px;
-                float: left;
+                align-self: flex-start;
+
+                @media (max-width: @screen-xs-max) {
+                    position: absolute;
+                    right: 2px;
+                    top: 2px;
+                }
 
                 img {
                     padding: 4px;
                     -webkit-border-radius: 30px;
                     border-radius: 30px;
+                    width: 58px;
+                    height: 58px;
                 }
 
                 @media (min-width: @screen-sm) {
@@ -1813,21 +1831,15 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
             }
 
             time {
-                float: left;
                 display: block;
-                width: auto;
-                height: 46px;
                 background-color: @gray-lighter;
-                display: inline-block;
                 color: #333333;
                 font-size: 12px;
                 line-height: 14px;
                 color: #958b7c;
-                width: 100%;
-                padding-left: 80px;
-                margin-top: -46px;
                 margin-bottom: 0;
                 font-weight: 600;
+                padding: 10px 18px 0px 18px;
 
 
                 br {
@@ -1849,13 +1861,9 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
             }
 
             .postedBy {
-                min-height: 46px;
-                width: 100%;
                 background-color: @gray-lighter;
-                padding-left: 80px;
-                line-height: 1;
-                padding-top: 8px !important;
                 font-size: 16px;
+                font-weight: bold;
 
                 a {
                     overflow: hidden;
@@ -1863,13 +1871,11 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
                     -o-text-overflow: ellipsis;
                     text-overflow: ellipsis;
                     white-space: nowrap;
-                    display: inline-block;
                     max-width: 100%;
-                    height: 29px;
                 }
 
-                @media (max-width: @screen-sm) {
-                    padding-top: 14px !important;
+                @media (max-width: @screen-xs-max) {
+                    padding: 3px 18px 0;
                 }
 
                 @media (min-width: @screen-sm) {
@@ -1954,13 +1960,13 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
                 }
 
                 .avatar {
-                    
+                    @media (max-width: @screen-xs-max) {
+                        left: 2px;
+                        right: auto;
+                    }
                 }
 
                 time {
-                    float: right;
-                    padding-left: 0;
-                    padding-right: 80px;
                     background-color: #FFF7CD;
 
                     @media (min-width: @screen-sm) {
@@ -1973,13 +1979,6 @@ pre[class*="language-"]:before, pre[class*="language-"]:after {
 
                 .postedBy {
                     background-color: #FFF7CD;
-                    padding-left: 0;
-                    padding-right: 80px;
-
-                    @media (min-width: @screen-sm) {
-                        padding: 3px 20px;
-                        margin-right: -18px;
-                    }
                 }
 
                 .comment-body {
