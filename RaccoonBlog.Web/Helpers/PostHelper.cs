@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using HtmlAgilityPack;
 using RaccoonBlog.Web.Infrastructure.AutoMapper.Profiles.Resolvers;
 using RaccoonBlog.Web.Infrastructure.Common;
 using RaccoonBlog.Web.Models;
@@ -29,6 +30,25 @@ namespace RaccoonBlog.Web.Helpers
 				WordCount = wordCount
 			};
 		}
+
+        public static string GetMetaDescription(MvcHtmlString body)
+        {
+            const int maxLength = 160;
+            const string ellipsis = "...";
+
+            var shortenedLength = maxLength - ellipsis.Length;
+
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(body.ToString());
+            var htmlBody = htmlDoc.DocumentNode;
+            var bodyText = htmlBody.InnerText;
+
+            if (bodyText.Length < maxLength)
+                return bodyText;
+
+            var shortenedText = bodyText.Substring(0, shortenedLength);
+            return $"{shortenedText}{ellipsis}";
+        }
 
 	    public static string Url(Post post)
 	    {

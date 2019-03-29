@@ -7,7 +7,11 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico">
-    <meta name="description" content="@ViewBag.BlogConfig.MetaDescription">
+    
+    @if (ViewBag.BlogConfig.MetaDescription != null)
+    {
+        <meta name="description" content="@ViewBag.BlogConfig.MetaDescription">
+    }
     @{
         ViewBag.Message = TempData["Message"] as string;
     }
@@ -20,6 +24,7 @@
         {<text> @ViewBag.Title - </text>}@ViewBag.BlogConfig.Title
     </title>
 
+    @RenderSection("HeaderAdditions", false)
     @Styles.Render("~/Content/css/styles")
     @Html.RenderTheme(ViewBag.BlogConfig.CustomCss as string)
     @RenderSection("Style", false)

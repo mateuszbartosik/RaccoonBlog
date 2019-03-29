@@ -3,6 +3,29 @@
 @{
 	ViewBag.CurrentAction = @ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
 }
+
+@section HeaderAdditions
+{
+    @{
+        var title = ViewBag.BlogConfig.Title;
+        var url = Request.Url.AbsoluteUri;
+        var description = "OREN EINI aka Ayende Rahien CEO of HIBERNATING RHINOS LTD, which develops RAVENDB, a NoSQL Open Source Document Database.";
+    }
+
+    <meta name="og:site_name" content="@title">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="@title">
+    <meta name="og:description" content="@description">
+    <meta name="og:url" content="@url">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@("@")@ViewBag.BlogConfig.TwitterLogin">
+    <meta name="twitter:site" content="@("@")@ViewBag.BlogConfig.TwitterLogin">
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@description">
+    <meta name="twitter:url" content="@url">
+}
+
 <div class="postsList">
     @foreach (var post in Model.Posts)
 	{
