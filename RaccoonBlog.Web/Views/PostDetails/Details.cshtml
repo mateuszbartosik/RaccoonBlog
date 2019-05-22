@@ -1,10 +1,33 @@
 ﻿@using RaccoonBlog.Web.Infrastructure.Common
 @model PostViewModel
 @{
-    ViewBag.Title = @Model.Post.Title;
+    string title = @Model.Post.Title;
+    ViewBag.Title = title;
 }
 @{
     ViewBag.CurrentUrl = Url.Action("Details", new { Model.Post.Id, Model.Post.Slug });
+}
+
+@section HeaderAdditions
+{
+    @{
+        var description = PostHelper.GetMetaDescription(Model.Post.Body);
+        var url = Request.Url.AbsoluteUri;
+    }
+    <meta name="description" content="@description">
+    
+    <meta name="og:site_name" content="@ViewBag.BlogConfig.Title">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="@title">
+    <meta name="og:description" content="@description">
+    <meta name="og:url" content="@url">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@("@")@ViewBag.BlogConfig.TwitterLogin">
+    <meta name="twitter:site" content="@("@")@ViewBag.BlogConfig.TwitterLogin">
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@description">
+    <meta name="twitter:url" content="@url">
 }
 
 <article class="article-body">

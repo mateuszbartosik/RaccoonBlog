@@ -19,8 +19,10 @@ using RaccoonBlog.Web.Infrastructure.AutoMapper;
 using RaccoonBlog.Web.Infrastructure.Indexes;
 using RaccoonBlog.Web.Infrastructure.Jobs;
 using Raven.Client.Documents;
+using Raven.Client.Documents.Conventions;
 using Raven.Client.Documents.Indexes;
 using Raven.Client.Documents.Session;
+using Raven.Client.Http;
 
 namespace RaccoonBlog.Web
 {
@@ -96,6 +98,10 @@ namespace RaccoonBlog.Web
 	        {
 	            Urls = urls.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries),
 	            Database = database,
+                Conventions = new DocumentConventions
+                {
+                    AggressiveCache = { Mode = AggressiveCacheMode.DoNotTrackChanges }
+                }
 	        };
 
 	        var certificatePath = WebConfigurationManager.AppSettings["Raven/CertificatePath"];
