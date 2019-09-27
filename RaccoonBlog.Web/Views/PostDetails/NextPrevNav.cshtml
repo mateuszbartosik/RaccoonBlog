@@ -7,7 +7,7 @@ var prev = model.GetPreviousPostInSeries();
 if (prev != null)
 {
         <a href="@Url.Post(prev.Id, prev.Slug)" class="pull-left series">
-            @Html.Glyphicon("chevron-left")
+            <span class="icomoon-position icon-chevron-left"></span>
             <span class="hidden-xs">&nbsp; previous series post</span>
         </a>
 }
@@ -20,7 +20,7 @@ if (next != null)
 {
         <a href="@Url.Post(next.Id, next.Slug)" class="pull-right series">
             <span class="hidden-xs">&nbsp; next series post</span>
-            @Html.Glyphicon("chevron-right")
+            <span class="icomoon-position icon-chevron-right"></span>
         </a>
 }
 }
@@ -30,7 +30,7 @@ if (next != null)
 if (model.IsSeriesArticle())
 {
         <a href="@Url.Series(Model.SeriesInfo.SeriesId, Model.SeriesInfo.SeriesSlug)" class="pull-left series">
-            <i class="glyphicon glyphicon-book"></i>
+            <i class="icon-book"></i>
             &nbsp;<span class="hidden-xs">all </span>series<span class="hidden-xs"> posts</span>
         </a>
 }
@@ -40,7 +40,7 @@ if (model.IsSeriesArticle())
     @if (Model.PreviousPost != null)
     {
         <a class="pull-left" href="@Url.Post(Model.PreviousPost.DomainId, Model.PreviousPost.Slug)">
-            @Html.Glyphicon("chevron-left")<span class="hidden-xs">&nbsp; previous post</span>
+            <span class="icomoon-position icon-chevron-left"></span><span class="hidden-xs">&nbsp; previous post</span>
         </a>
     }
 
@@ -48,7 +48,7 @@ if (model.IsSeriesArticle())
     {
         <a class="pull-right" href="@Url.Post(Model.NextPost.DomainId, Model.NextPost.Slug)">
             <span class="hidden-xs">next post &nbsp;</span>
-            @Html.Glyphicon("chevron-right")
+            <span class="icomoon-position icon-chevron-right"></span>
         </a>
     }
 

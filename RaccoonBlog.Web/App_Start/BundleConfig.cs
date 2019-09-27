@@ -102,7 +102,7 @@ namespace RaccoonBlog.Web
 
             bundles
                 .Add((new StyleBundle("~/Content/css/styles"))
-                    .Include("~/Content/css/socicon.css"));
+                    .Include("~/Content/css/icomoon.css"));
 
             bundles
                 .Add(new StyleBundle("~/Areas/Admin/Content/css/styles")
