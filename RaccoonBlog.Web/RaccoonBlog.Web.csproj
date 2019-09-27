@@ -541,7 +541,7 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\css\fonts\socicon-webfont.svg" />
+    <Content Include="Content\css\fonts\icomoon.svg" />
     <Content Include="Content\css\fullcalendar.css" />
     <Content Include="Content\css\fullcalendar.min.css" />
     <Content Include="Content\css\fullcalendar.print.css" />
@@ -568,7 +568,7 @@
     <Content Include="Content\css\img\side_bkg.jpg" />
     <Content Include="Content\css\img\side_bkg.png" />
     <Content Include="Content\css\prism.css" />
-    <Content Include="Content\css\socicon.css" />
+    <Content Include="Content\css\icomoon.css" />
     <Content Include="Content\css\img\commentDate.png" />
     <Content Include="Content\css\img\commentDateImp.png" />
     <Content Include="Content\images\**\*" />
@@ -1029,10 +1029,9 @@
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\css\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\css\fonts\socicon-webfont.eot" />
-    <Content Include="Content\css\fonts\socicon-webfont.ttf" />
-    <Content Include="Content\css\fonts\socicon-webfont.woff" />
-    <Content Include="Content\css\fonts\socicon-webfont.woff2" />
+    <Content Include="Content\css\fonts\icomoon.eot" />
+    <Content Include="Content\css\fonts\icomoon.ttf" />
+    <Content Include="Content\css\fonts\icomoon.woff" />
     <Content Include="Content\css\custom\ayende.styles.less" />
     <Content Include="Content\css\custom\ayende.styles.css.map">
       <DependentUpon>ayende.styles.css</DependentUpon>

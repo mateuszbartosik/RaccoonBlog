@@ -52,28 +52,28 @@
 					var timeToRead = PostHelper.CalculateTimeToRead(post.Body);
 				}
 				<div>
-					<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+					<span class="icomoon-position icon-time" aria-hidden="true"></span>
 					<span class="collapse"> time to read</span> <strong>@timeToRead.TimeToReadInMinutes min</strong> <span class="collapse">| <strong>@timeToRead.WordCount words</strong></span>
 				</div>
 			</div>
 			<hr />
 			<div class="postData">
-				<a href='@string.Format("http://twitter.com/intent/tweet?status={0}+{1} via @{2}", post.Title, Url.PostUrl(post.Id, post.Slug), post.Author.TwitterNick)'>
-					<span class="socicon twitter">a</span><span>Tweet</span>
+				<a style='text-decoration:none;' href='@string.Format("http://twitter.com/intent/tweet?status={0}+{1} via @{2}", post.Title, Url.PostUrl(post.Id, post.Slug), post.Author.TwitterNick)'>
+					<span class="icomoon icon-twitter"></span><span>Tweet</span>
 				</a>
 				<a style='text-decoration:none;' type="icon_link" onclick="window.open('@string.Format("http://www.facebook.com/sharer/sharer.php?u={0}&title={1}", Url.PostUrl(post.Id, post.Slug), post.Title)','sharer','toolbar=0,status=0,width=580,height=325');" href="javascript: void(0)">
-					<span class="socicon facebook">b</span><span>share</span>
+					<span class="icomoon icon-facebook"></span><span>Share</span>
 				</a>
 				<a style='text-decoration:none;' type="icon_link" onclick="popUp=window.open('@string.Format("https://plus.google.com/share?url={0}", Url.PostUrl(post.Id, post.Slug))', 'popupwindow', 'scrollbars=yes,width=600,height=400');popUp.focus();return false;" href="javascript: void(0)">
-					<span class="socicon linkedin">j</span><span>share</span>
+					<span class="icomoon icon-linkedin"></span><span>Share</span>
 				</a>
 				<a href="@Url.Action("Details", "PostDetails", new { post.Id, post.Slug })#comments">
-					<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><span>@post.CommentsCount comments</span>
+					<span class="icomoon-position glyphicon icon-comment" aria-hidden="true"></span><span>@post.CommentsCount comments</span>
 				</a>
 				@if (post.Tags.Count > 0)
 				{
 					<div class="tags pull-right-lg">
-						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Tags:
+						<span class="icomoon-position icon-tag" aria-hidden="true"></span> Tags:
 						<ul>
 							@foreach (var tag in post.Tags)
 							{

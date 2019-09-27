@@ -219,11 +219,9 @@ namespace Links
                 public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
                 public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
                 public static readonly string glyphicons_halflings_regular_woff2 = Url("glyphicons-halflings-regular.woff2");
-                public static readonly string socicon_webfont_eot = Url("socicon-webfont.eot");
-                public static readonly string socicon_webfont_svg = Url("socicon-webfont.svg");
-                public static readonly string socicon_webfont_ttf = Url("socicon-webfont.ttf");
-                public static readonly string socicon_webfont_woff = Url("socicon-webfont.woff");
-                public static readonly string socicon_webfont_woff2 = Url("socicon-webfont.woff2");
+                public static readonly string icomoon_svg = Url("icomoon.svg");
+                public static readonly string icomoont_ttf = Url("icomoon.ttf");
+                public static readonly string icomoon_woff = Url("icomoon.woff");
             }
         
             public static readonly string fullcalendar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/fullcalendar.min.css") ? Url("fullcalendar.min.css") : Url("fullcalendar.css");
@@ -269,7 +267,7 @@ namespace Links
         
             public static readonly string mdd_styles_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/mdd_styles.min.css") ? Url("mdd_styles.min.css") : Url("mdd_styles.css");
             public static readonly string prism_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/prism.min.css") ? Url("prism.min.css") : Url("prism.css");
-            public static readonly string socicon_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/socicon.min.css") ? Url("socicon.min.css") : Url("socicon.css");
+            public static readonly string icomoon_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(UrlPath + "/icomoon.min.css") ? Url("icomoon.min.css") : Url("icomoon.css");
             public static readonly string styles_less = Url("styles.less");
         }
     
@@ -283,11 +281,10 @@ namespace Links
             public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
             public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
             public static readonly string glyphicons_halflings_regular_woff2 = Url("glyphicons-halflings-regular.woff2");
-            public static readonly string socicon_webfont_eot = Url("socicon-webfont.eot");
-            public static readonly string socicon_webfont_svg = Url("socicon-webfont.svg");
-            public static readonly string socicon_webfont_ttf = Url("socicon-webfont.ttf");
-            public static readonly string socicon_webfont_woff = Url("socicon-webfont.woff");
-            public static readonly string socicon_webfont_woff2 = Url("socicon-webfont.woff2");
+            public static readonly string icomoon_eot = Url("icomoon.eot");
+            public static readonly string icomoon_svg = Url("icomoon.svg");
+            public static readonly string icomoont_ttf = Url("icomoon.ttf");
+            public static readonly string icomoon_woff = Url("icomoon.woff");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -2317,7 +2314,7 @@ namespace Links
                     public static readonly string fullcalendar_print_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/fullcalendar.print.css");
                     public static readonly string mdd_styles_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/mdd_styles.css");
                     public static readonly string prism_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/prism.css");
-                    public static readonly string socicon_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/socicon.css");
+                    public static readonly string icomoon_css = T4MVCHelpers.ProcessAssetPath("~/Content/css/icomoon.css");
                 }
             }
             public static partial class fonts 
