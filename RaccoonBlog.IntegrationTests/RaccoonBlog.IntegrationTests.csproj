@@ -93,7 +93,7 @@
       <Version>3.0.100</Version>
     </PackageReference>
     <PackageReference Include="RavenDB.Client">
-      <Version>4.2.0-nightly-20190513-0501</Version>
+      <Version>4.2.3</Version>
     </PackageReference>
     <PackageReference Include="RavenDB.TestDriver">
       <Version>4.2.0-nightly-20190513-0501</Version>
