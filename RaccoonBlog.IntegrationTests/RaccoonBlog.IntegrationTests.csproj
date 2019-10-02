@@ -38,8 +38,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Raven.TestDriver, Version=4.0.4.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
-      <HintPath>..\packages\RavenDB.TestDriver.4.0.4-nightly-20180524-0436\lib\netstandard2.0\Raven.TestDriver.dll</HintPath>
+    <Reference Include="Raven.TestDriver, Version=4.2.3.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.TestDriver.4.2.3\lib\netstandard2.0\Raven.TestDriver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -93,10 +93,10 @@
       <Version>3.0.100</Version>
     </PackageReference>
     <PackageReference Include="RavenDB.Client">
-      <Version>4.2.0-nightly-20190513-0501</Version>
+      <Version>4.2.3</Version>
     </PackageReference>
     <PackageReference Include="RavenDB.TestDriver">
-      <Version>4.2.0-nightly-20190513-0501</Version>
+      <Version>4.2.3</Version>
     </PackageReference>
     <PackageReference Include="RedditSharp">
       <Version>1.1.14</Version>
