@@ -15,7 +15,7 @@
         var url = Request.Url.AbsoluteUri;
     }
     <meta name="description" content="@description">
-    
+
     <meta name="og:site_name" content="@ViewBag.BlogConfig.Title">
     <meta name="og:type" content="website">
     <meta name="og:title" content="@title">
@@ -28,6 +28,23 @@
     <meta name="twitter:title" content="@title">
     <meta name="twitter:description" content="@description">
     <meta name="twitter:url" content="@url">
+
+    @{
+        var tags = Model.Post.Tags.Select(tag => tag.Name);
+        string link;
+
+        if (tags.Any(tag => tag.Equals("ravendb.net", StringComparison.InvariantCultureIgnoreCase)))
+        {
+            var path = "articles/" + Model.Post.Slug;
+            link = "https://ravendb.net/" + path;
+        }
+        else
+        {
+            link = Url.AbsoluteAction("Details", new {Model.Post.Id, Model.Post.Slug});
+        }
+
+        <link rel="canonical" href="@link">
+    }
 }
 
 <article class="article-body">
@@ -114,15 +131,18 @@
                 {
                     if (post.PublishAt >= DateTimeOffset.Now)
                     {
-                        <li><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;@(post.Title)</li>    }
+                        <li><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;@(post.Title)</li>
+ }
                     else
                     {
                         if (post.Id == Model.Post.Id)
                         {
-                            <li><strong><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;<a href="@Url.Action("Details", new { post.Id, post.Slug })">@(post.Title)</a></strong></li>    }
+                            <li><strong><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;<a href="@Url.Action("Details", new { post.Id, post.Slug })">@(post.Title)</a></strong></li>
+ }
                         else
                         {
-                            <li><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;<a href="@Url.Action("Details", new { post.Id, post.Slug })">@(post.Title)</a></li>    }
+                            <li><em>(@(post.PublishAt.ToString("dd MMM yyyy")))</em>&nbsp;<a href="@Url.Action("Details", new { post.Id, post.Slug })">@(post.Title)</a></li>
+}
                     }
                 }
             </ol>
@@ -295,7 +315,7 @@
                                     <span class="form_item_name">Human?</span>
                                 </label>
                                 @Recaptcha2Helper.Widget()
-                                
+
                                 <span class="captcha-error">
                                     @Html.ValidationMessage(Recaptcha2Helper.ModelStateErrorKey)
                                 </span>
@@ -342,9 +362,6 @@
     </div>
 </div>
 
-@section Style {
-    <link rel="canonical" href="@Url.AbsoluteAction("Details", new { Model.Post.Id, Model.Post.Slug })">
-}
 @section Script {
     <script type="text/javascript">
         window.twttr = (function (d, s, id) {
@@ -359,6 +376,6 @@
             return t;
         }(document, "script", "twitter-wjs"));
     </script>
-    
+
     @Recaptcha2Helper.ScriptRef()
 }
