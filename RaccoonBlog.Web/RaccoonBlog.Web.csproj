@@ -271,6 +271,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\Enums\MenuButtonType.cs" />
     <Compile Include="Areas\Admin\Models\FutureRssAccess.cs" />
+    <Compile Include="Areas\Admin\ViewModels\AddIpToBlackListViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\RedditManualSubmissionViewModel.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PostsApiController.cs" />
@@ -1063,6 +1064,7 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Content\css\error.less" />
     <Content Include="Areas\Admin\Views\Settings\RedditSubmission.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\AddIpToBlackList.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

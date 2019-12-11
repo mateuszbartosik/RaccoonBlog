@@ -40,6 +40,10 @@
 	<a href="@Url.AbsoluteAction("Details", "Posts", new { id = Model.PostId, slug = Model.PostSlug, area = "Admin" })#comment@(Model.Id)">
 		View Comment In Admin Page</a>
 </p>
+<p>
+	<a href="@Url.AbsoluteAction("AddIpToBlackList", "Posts", new { ipAddress = Model.IpAddress, area = "Admin" })">
+		Add commenter IP to blacklist</a>
+</p>
 @if (Model.IsSpam)
 {
 	<p>

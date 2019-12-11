@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using HibernatingRhinos.Loci.Common.Extensions;
 using HibernatingRhinos.Loci.Common.Models;
+using RaccoonBlog.Web.Areas.Admin.ViewModels;
 using RaccoonBlog.Web.Helpers;
 using RaccoonBlog.Web.Helpers.Attributes;
 using RaccoonBlog.Web.Infrastructure.AutoMapper;
@@ -280,7 +281,53 @@ update {
 "));
 			return View();
 		}
-	}
+
+        [HttpGet]
+        public virtual ActionResult AddIpToBlackList(string ipAddress)
+        {
+            var id = BlackList.GetId(ipAddress);
+            var alreadyExists = RavenSession.Advanced.Exists(id);
+
+            var viewModel = new AddIpToBlackListViewModel
+            {
+                IpAddress = ipAddress,
+                AlreadySaved = alreadyExists
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public virtual ActionResult AddIpToBlackList(AddIpToBlackListViewModel viewModel)
+        {
+            var ipAddress = viewModel.IpAddress;
+
+            var id = BlackList.GetId(ipAddress);
+
+            var blackList = RavenSession.Load<BlackList>(id);
+
+            if (blackList == null)
+            {
+                blackList = BlackList.New(ipAddress);
+                RavenSession.Store(blackList);
+            }
+
+            SetExpirationDate(blackList);
+
+            RavenSession.SaveChanges();
+
+            return SuccessResponse();
+        }
+
+        private void SetExpirationDate(BlackList blackList)
+        {
+            var expirationDate = DateTime.UtcNow.AddMonths(1);
+            var metadata = RavenSession.Advanced.GetMetadataFor(blackList);
+
+            metadata[Raven.Client.Constants.Documents.Metadata.Expires] = expirationDate;
+        }
+
+    }
 
 	public enum CommentCommandOptions
 	{
