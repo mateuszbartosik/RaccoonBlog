@@ -26,7 +26,9 @@
 	<li><strong>Url:</strong> @Model.Url</li>
 	<li><strong>Email:</strong> @Model.Email</li>
 	<li><strong>Created At:</strong> @Model.CreatedAt</li>
-	<li><strong>Commenter ID:</strong> @Model.CommenterId</li>
+    <li><strong>Commenter ID:</strong> @Model.CommenterId</li>
+    <li><strong>IP:</strong> @Model.IpAddress</li>
+    <li><strong>User-Agent:</strong> @Model.UserAgent</li>
 </ul>
 <strong>Body:</strong>
 <p>@Model.Body</p>
@@ -37,6 +39,10 @@
 <p>
 	<a href="@Url.AbsoluteAction("Details", "Posts", new { id = Model.PostId, slug = Model.PostSlug, area = "Admin" })#comment@(Model.Id)">
 		View Comment In Admin Page</a>
+</p>
+<p>
+	<a href="@Url.AbsoluteAction("AddIpToBlackList", "Posts", new { ipAddress = Model.IpAddress, area = "Admin" })">
+		Add commenter IP to blacklist</a>
 </p>
 @if (Model.IsSpam)
 {

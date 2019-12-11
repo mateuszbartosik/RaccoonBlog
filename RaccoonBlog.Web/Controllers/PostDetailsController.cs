@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -85,41 +86,52 @@ namespace RaccoonBlog.Web.Controllers
         [HttpPost]
         public virtual async Task<ActionResult> Comment(CommentInput input, string id, Guid key)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid == false)
+                return RedirectToAction("Details");
+
+            if (IsIpAddressBlocked())
+                return new HttpStatusCodeResult(HttpStatusCode.PaymentRequired);
+
+            var post = RavenSession
+                .Include<Post>(x => x.CommentsId)
+                .Load("posts/" + id);
+
+            if (post == null || post.IsPublicPost(key) == false)
+                return HttpNotFound();
+
+            var comments = RavenSession.Load<PostComments>(post.CommentsId);
+            if (comments == null)
+                return HttpNotFound();
+
+            var commenter = RavenSession.GetCommenter(input.CommenterKey);
+            if (commenter == null)
             {
-                var post = RavenSession
-                    .Include<Post>(x => x.CommentsId)
-                    .Load("posts/" + id);
-
-                if (post == null || post.IsPublicPost(key) == false)
-                    return HttpNotFound();
-
-                var comments = RavenSession.Load<PostComments>(post.CommentsId);
-                if (comments == null)
-                    return HttpNotFound();
-
-                var commenter = RavenSession.GetCommenter(input.CommenterKey);
-                if (commenter == null)
-                {
-                    input.CommenterKey = Guid.NewGuid();
-                }
-
-                ValidateCommentsAllowed(post, comments);
-                await ValidateCaptcha(input, commenter);
-
-                if (ModelState.IsValid == false)
-                    return PostingCommentFailed(post, input, key);
-
-                TaskExecutor.ExcuteLater(new AddCommentTask(input, Request.MapTo<AddCommentTask.RequestValues>(), id));
-
-                CommenterUtil.SetCommenterCookie(Response, input.CommenterKey.MapTo<string>());
-
-                OutputCacheManager.RemoveItem(SectionController.NameConst, MVC.Section.ActionNames.List);
-
-                return PostingCommentSucceeded(post, input);
+                input.CommenterKey = Guid.NewGuid();
             }
 
-            return RedirectToAction("Details");
+            ValidateCommentsAllowed(post, comments);
+            await ValidateCaptcha(input, commenter);
+
+            if (ModelState.IsValid == false)
+                return PostingCommentFailed(post, input, key);
+
+            TaskExecutor.ExcuteLater(new AddCommentTask(input, Request.MapTo<AddCommentTask.RequestValues>(), id));
+
+            CommenterUtil.SetCommenterCookie(Response, input.CommenterKey.MapTo<string>());
+
+            OutputCacheManager.RemoveItem(SectionController.NameConst, MVC.Section.ActionNames.List);
+
+            return PostingCommentSucceeded(post, input);
+        }
+
+        private bool IsIpAddressBlocked()
+        {
+            var ip = Request.UserHostAddress;
+
+            var blacklistId = BlackList.GetId(ip);
+
+            var documentExists = RavenSession.Advanced.Exists(blacklistId);
+            return documentExists;
         }
 
         private ActionResult PostingCommentSucceeded(Post post, CommentInput input)
