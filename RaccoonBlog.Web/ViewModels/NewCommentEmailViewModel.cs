@@ -19,5 +19,7 @@ namespace RaccoonBlog.Web.ViewModels
 		public string BlogName { get; set; }
 		public string Key { get; set; }
 		public string CommenterId { get; set; }
+        public string IpAddress { get; set; }
+        public string UserAgent { get; set; }
 	}
 }

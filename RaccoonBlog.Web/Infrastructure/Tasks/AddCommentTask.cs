@@ -98,6 +98,8 @@ namespace RaccoonBlog.Web.Infrastructure.Tasks
 			viewModel.BlogName = DocumentSession.Load<BlogConfig>(BlogConfig.Key).Title;
 			viewModel.Key = post.ShowPostEvenIfPrivate.MapTo<string>();
 		    viewModel.IsSpam = comment.IsSpam;
+            viewModel.IpAddress = comment.UserHostAddress;
+            viewModel.UserAgent = comment.UserAgent;
 
 			var subject = string.Format("{2}Comment on: {0} from {1}", viewModel.PostTitle, viewModel.BlogName, viewModel.IsSpam ? "[DETECTED SPAM] " : string.Empty);
 

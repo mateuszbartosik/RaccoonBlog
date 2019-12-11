@@ -327,6 +327,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BlackList.cs" />
     <Compile Include="Models\Configs.cs" />
     <Compile Include="Models\DynamicContent.cs" />
     <Compile Include="Models\SocialNetworkIntegration.cs" />
