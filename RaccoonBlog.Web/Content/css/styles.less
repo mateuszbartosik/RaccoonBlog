@@ -44,7 +44,7 @@ hr {
 .show-menu {
     @media (max-width: @screen-xs-max) {
         .collapseMobile {
-            height: 85vh;
+            height: 90vh;
         }
     }
 
@@ -2528,27 +2528,28 @@ li.future {
 }
 
 .rewards {
-    .mvp-profile {
+    .mvp-profile-horizontal {
         display: block;
         background-image: url(../img/mvp-horizontal.png);
+        margin: auto;
         width: 150px;
         height: 61px;
-
+    }
+    .mvp-profile-vertical {
+        display: none;
     }
 }
 
 .hideSidebar {
     .rewards {
-        .mvp-profile {
+        .mvp-profile-vertical {
             display: block;
             background-image: url(../img/mvp-vertical.png);
             width: 70px;
             height: 110px;
 
-            @media (max-width: @screen-sm) {
-                background-image: url(../img/mvp-horizontal.png);
-                width: 150px;
-                height: 61px;
+            @media (max-width: 767px) {
+                display: none;
             }
         }
     }
