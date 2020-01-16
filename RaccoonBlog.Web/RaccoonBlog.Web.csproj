@@ -563,6 +563,8 @@
     <Content Include="Content\css\img\left-corner.png" />
     <Content Include="Content\css\img\logo-vertical.svg" />
     <Content Include="Content\css\img\logo.svg" />
+    <Content Include="Content\css\img\mvp-horizontal.png" />
+    <Content Include="Content\css\img\mvp-vertical.png" />
     <Content Include="Content\css\img\readmore.png" />
     <Content Include="Content\css\img\readmore2.png" />
     <Content Include="Content\css\img\right-corner.png" />
