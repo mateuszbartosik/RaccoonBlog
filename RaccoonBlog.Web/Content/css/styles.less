@@ -2527,8 +2527,31 @@ li.future {
     }
 }
 
-.hideSidebar {
+.rewards {
+    .mvp-profile {
+        display: block;
+        background-image: url(../img/mvp-horizontal.png);
+        width: 150px;
+        height: 61px;
 
+    }
+}
+
+.hideSidebar {
+    .rewards {
+        .mvp-profile {
+            display: block;
+            background-image: url(../img/mvp-vertical.png);
+            width: 70px;
+            height: 110px;
+
+            @media (max-width: @screen-sm) {
+                background-image: url(../img/mvp-horizontal.png);
+                width: 150px;
+                height: 61px;
+            }
+        }
+    }
 
     @media (min-width: @screen-sm) and (max-width: @screen-md-max) {
         .rightSide {
