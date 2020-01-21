@@ -240,19 +240,19 @@
                         @Html.Hidden("redirectUrl", Url.RelativeToAbsolute((string)ViewBag.CurrentUrl + "#postComment"))
                         @if (ConfigurationHelper.GoogleOAuthKeys != null)
                         {
-                            <button type="submit" name="provider" value="Google" class="btn btn-default btn-google">ggl</button>
+                            <button type="submit" name="provider" value="Google" class="btn btn-default btn-google"><i class="icon-google"></i></button>
                         }
                         @if (ConfigurationHelper.MicrosoftOAuthKeys != null)
                         {
-                            <button type="submit" name="provider" value="Microsoft" class="btn btn-default btn-ms">Z</button>
+                            <button type="submit" name="provider" value="Microsoft" class="btn btn-default btn-ms"><i class="icon-windows"></i></button>
                         }
                         @if (ConfigurationHelper.FacebookOAuthKeys != null)
                         {
-                            <button type="submit" name="provider" value="Facebook" class="btn btn-default btn-fb">b</button>
+                            <button type="submit" name="provider" value="Facebook" class="btn btn-default btn-fb"><i class="icon-facebook"></i></button>
                         }
                         @if (ConfigurationHelper.TwitterOAuthKeys != null)
                         {
-                            <button type="submit" name="provider" value="Twitter" class="btn btn-default btn-twitter">a</button>
+                            <button type="submit" name="provider" value="Twitter" class="btn btn-default btn-twitter"><i class="icon-twitter"></i></button>
                         }
 
                     </form>
