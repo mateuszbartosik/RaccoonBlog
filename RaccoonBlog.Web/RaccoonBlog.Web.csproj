@@ -275,6 +275,7 @@
     <Compile Include="Areas\Admin\ViewModels\RedditManualSubmissionViewModel.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PostsApiController.cs" />
+    <Compile Include="Controllers\LegalController.cs" />
     <Compile Include="Controllers\SeriesController.cs" />
     <Compile Include="CssController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -1168,6 +1169,8 @@
     <Content Include="Views\PostDetails\NextPrevNav.cshtml" />
     <Content Include="Views\PostDetails\MarkdownHelp.cshtml" />
     <Content Include="Views\MailTemplates\RedditSubmissionFailed.cshtml" />
+    <Content Include="Views\Legal\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Legal\Terms.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

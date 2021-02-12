@@ -25,6 +25,8 @@ namespace RaccoonBlog.Web
 		    Series();
 
 			Api();
+			Terms();
+			PrivacyPolicy();
 			Posts();
 			LegacyPost();
 			PostDetails();
@@ -51,6 +53,24 @@ namespace RaccoonBlog.Web
 			routes.MapRouteLowerCase("Api-PostsByTags",
 				"api/posts-by-tags",
 				new { controller = "PostsApi", action = "GetPostsByTags" },
+				new[] { "RaccoonBlog.Web.Controllers" }
+			);
+		}
+
+		private void Terms()
+		{
+			routes.MapRouteLowerCase("Terms",
+				"terms",
+				new { controller = "Legal", action = "Terms" },
+				new[] { "RaccoonBlog.Web.Controllers" }
+			);
+		}
+
+		private void PrivacyPolicy()
+        {
+			routes.MapRouteLowerCase("PrivacyPolicy",
+				"privacy-policy",
+				new { controller = "Legal", action = "PrivacyPolicy" },
 				new[] { "RaccoonBlog.Web.Controllers" }
 			);
 		}
