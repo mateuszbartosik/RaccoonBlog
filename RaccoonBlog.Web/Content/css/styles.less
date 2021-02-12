@@ -23,6 +23,10 @@ hr {
     margin-top: 2vh !important;
 }
 
+.margin-bottom {
+    margin-bottom: 2vh !important;
+}
+
 .collapseMobile {
     height: 0;
     overflow: hidden;
@@ -2601,7 +2605,7 @@ li.future {
             }
         }
 
-        .copyright {
+        .copyright, .legal-link {
             font-size: 11px;
         }
     }
@@ -2653,4 +2657,47 @@ li.future {
 .icomoon-position {
     position: relative;
     top: 1.15px;
+}
+
+.legal-container {
+    max-width: 1000px;
+    padding: 0;
+
+    h1 {
+        background-color: @gray-lighter;
+        padding: @grid-gutter-width 0;
+        margin-bottom: 0;
+        font-weight: 800;
+        letter-spacing: .033em;
+        text-transform: uppercase;
+    }
+
+    h2, h3 {
+        font-weight: 700;
+    }
+
+    h4, h5 {
+        font-weight: 600;
+    }
+
+    p {
+        margin: @grid-gutter-width/2 0;
+    }
+    
+    .table-responsive {
+        margin: @grid-gutter-width/2 0;
+        table {
+            margin: 0;
+        }
+    }
+
+    ul, ol {
+        li {
+            margin: @grid-gutter-width/3 0;
+        }
+    }
+    
+    hr {
+        margin: @grid-gutter-width 0;
+    }
 }
