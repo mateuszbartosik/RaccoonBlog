@@ -6,10 +6,8 @@
     const string email = "oren@ravendb.net";
     const string phone = "+972 52-548-6969";
 }
-<div class="flex-grow"></div>
 <img src="~/Content/images/oren.jpg" class="oren-photo img-center" />
-<div class="flex-grow"></div>
-<div class="margin-top">
+<div class="margin-top text-center">
     <span>@fullName</span> <span>aka Ayende Rahien</span>
     <span>
         CEO of <a href="http://www.hibernatingrhinos.com/" class="about-link" target="_blank"><strong> Hibernating Rhinos LTD</strong></a>,
@@ -17,12 +15,12 @@
         a NoSQL Open Source Document Database.
     </span>
     <div class="rewards margin-top">
-        <a class="mvp-profile-horizontal" href="https://mvp.microsoft.com/en-us/PublicProfile/4012807" title="Microsoft MVP Reconnect Oren Eini" target="_blank"></a>
+        <a class="mvp-profile-horizontal" href="https://mvp.microsoft.com/en-us/PublicProfile/4012807" title="Microsoft MVP Reconnect Oren Eini" target="_blank" rel="nofollow"><img src="~/Content/css/img/mvp-horizontal.svg"/></a>
+        <a class="dzone-profile-horizontal" href="https://dzone.com/users/750579/ayende.html" title="DZone 2020 Hall of Fame Award Winner" target="_blank" rel="nofollow"><img src="~/Content/css/img/dzone-horizontal.svg" /></a>
     </div>
 </div>
 <div class="about-info margin-top">
-    <p>You can reach me by:</p>
-    <p class="mail"><a href="@string.Format("mailto:{0}", email)">@email</a></p>
-    <p class="phone">@phone</p>
-    <div class="flex-grow"></div>
+    <p class="text-center">Get in touch with me:</p>
+    <p class="mail"><img src="~/Content/css/img/ico_mail.svg" class="icon-about" /><a href="@string.Format("mailto:{0}", email)">@email</a></p>
+    <p class="phone"><img src="~/Content/css/img/ico_phone.svg" class="icon-about" />@phone</p>
 </div>
