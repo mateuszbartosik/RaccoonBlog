@@ -552,6 +552,7 @@
     <Content Include="Content\css\img\banners\best-practices-and-performance.png" />
     <Content Include="Content\css\img\banners\bootcamp-banner.png" />
     <Content Include="Content\css\img\banners\cosmos-db-prof-banner.png" />
+    <Content Include="Content\css\img\banners\couchbase-vs-ravendb-whitepaper.png" />
     <Content Include="Content\css\img\banners\linkedin.png" />
     <Content Include="Content\css\img\banners\producthunt-efprof.png" />
     <Content Include="Content\css\img\banners\producthunt-nhprof.png" />
