@@ -32,8 +32,8 @@
 		<article class="article-body">
             <div class="atricle-header">
                 <time>
-                    <span>@post.PublishedAt.ToString("MMM dd")</span>
-                    @post.PublishedAt.ToString("yyyy")
+                    <strong>@post.PublishedAt.ToString("MMM dd")</strong>
+                    <span>@post.PublishedAt.ToString("yyyy")</span>
                 </time>
                 <a href="@Url.Action("Details", "PostDetails", new { post.Id, post.Slug })">
                     @if (post.IsSerie == false)
