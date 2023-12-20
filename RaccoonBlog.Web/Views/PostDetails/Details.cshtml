@@ -51,8 +51,8 @@
     @Html.Partial("NextPrevNav")
     <header>
         <time>
-            <span>@Model.Post.PublishedAt.ToString("MMM dd")</span>
-            @Model.Post.PublishedAt.ToString("yyyy")
+            <strong>@Model.Post.PublishedAt.ToString("MMM dd")</strong>
+            <span>@Model.Post.PublishedAt.ToString("yyyy")</span>
         </time>
         <a href="@Url.Action("Details", new { Model.Post.Id, Model.Post.Slug })">
             @if (Model.SeriesInfo == null)
@@ -169,8 +169,8 @@
                         <img src='@(string.Format("https://www.gravatar.com/avatar.php?gravatar_id={0}&size=50&default=identicon", @comment.EmailHash))' alt="@comment.Author" />
                     </div>
                     <time>
-                        @DateTime.Parse(@comment.CreatedAt).ToString("dd MMM yyyy")<br />
-                        @DateTime.Parse(@comment.CreatedAt).ToString("HH:mm tt")
+                        <strong>@DateTime.Parse(@comment.CreatedAt).ToString("dd MMM yyyy")</strong><br />
+                        <span>@DateTime.Parse(@comment.CreatedAt).ToString("HH:mm tt")</span>
                     </time>
                     <div class="postedBy">
                         <a href="@comment.Url" target="_blank" title='@(string.Format("Comment by {0}", @comment.Author))'>@comment.Author</a>
@@ -190,8 +190,8 @@
                         <img src='@(string.Format("https://www.gravatar.com/avatar.php?gravatar_id={0}&size=50&default=identicon", @comment.EmailHash))' alt="@comment.Author" />
                     </div>
                     <time>
-                        @DateTime.Parse(@comment.CreatedAt).ToString("dd MMM yyyy")<br />
-                        @DateTime.Parse(@comment.CreatedAt).ToString("HH:mm tt")
+                        <strong>@DateTime.Parse(@comment.CreatedAt).ToString("dd MMM yyyy")</strong><br />
+                        <span>@DateTime.Parse(@comment.CreatedAt).ToString("HH:mm tt")</span>
                     </time>
                     <div class="postedBy">
                         <a href="@comment.Url" target="_blank" title='@(string.Format("Comment by {0}", @comment.Author))'>@comment.Author</a>

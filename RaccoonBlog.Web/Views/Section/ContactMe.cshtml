@@ -20,7 +20,7 @@
         <small class="mail"><img src="~/Content/css/img/ico_mail.svg" class="icon-about" /><a href="@string.Format("mailto:{0}", email)">@email</a></small>
         <small class="phone"><img src="~/Content/css/img/ico_phone.svg" class="icon-about" />@phone</small>
     </div>
-    <p class="d-flex gap-5 justify-content-center flex-wrap icomoon margin-top">
+    <p class="d-flex gap-3 justify-content-center flex-wrap icomoon margin-top">
         @if (ViewBag.BlogConfig.TwitterLogin != null)
         {
             <a href="@string.Format("https://twitter.com/{0}", ViewBag.BlogConfig.TwitterLogin)" class="icon-twitter"></a>
