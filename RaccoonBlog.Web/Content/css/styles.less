@@ -699,8 +699,13 @@ hr {
 
 .articleContent:not(.postsList .articleContent) {
     @media (min-width: @screen-sm) {
-        margin: 0 auto;
-        max-width: 800px;
+        background-color: #f9f5f0;
+        .text-wrapper {
+            background-color: @body-bg;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 30px;
+        }
     }
 }
 
@@ -2354,7 +2359,7 @@ li.future {
         }
     }
 
-    .mvp-profile-vertical, .dzone-profiler-vertical {
+    .mvp-profile-vertical, .dzone-profile-vertical {
         display: none;
     }
 }
